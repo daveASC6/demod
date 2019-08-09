@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <embed name="Summer" src="C:\Users\ASCStudent\Documents\demod\Summer.mp3" loop="true" hidden="true" autostart="true">
+        <!-- <embed name="Summer" src="C:\Users\ASCStudent\Documents\demod\Summer.mp3" loop="true" hidden="true" autostart="true"> -->
             <link rel="stylesheet" href="style.css">
-            <script src="main.js"></script>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             <link href="https://fonts.googleapis.com/css?family=Tangerine|Unica+One&display=swap" rel="stylesheet">
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -12,6 +11,16 @@
         <title>BuskFind</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+
+ 
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin="" defer></script>
+    <script src="main.js" defer></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -75,10 +84,6 @@
                       </form>
                     </div>
                   </nav>
-                  <div id="map"></div>
- <!-- Replace the value of the key parameter with your own API key. -->
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvgBW3MBpTdR62hl6FLaH6pYeExiy1Gu4&callback=initMap"
-   async defer></script>
-                       
+                  <div id="mapid"></div>
     </body>
 </html>
