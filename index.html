@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <embed name="Summer" src="C:\Users\ASCStudent\Documents\demod\Summer.mp3" loop="true" hidden="true" autostart="true">
+            <link rel="stylesheet" href="style.css">
+            <script src="main.js"></script>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link href="https://fonts.googleapis.com/css?family=Tangerine|Unica+One&display=swap" rel="stylesheet">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <title>BuskFind</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    </head>
+    <body>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <img src="logo.png" width="60" height="40">
+                    <a class="navbar-brand" href="#">BuskFind</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+ 
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <button class="buttonload">
+                                <a href ="file:///C:/Users/ASCStudent/Documents/demod/index.html" class="nav-link">Home <span class="sr-only">(current)</span> </a>
+                              </button>   
+                          
+                        </li>
+                        <li class="nav-item">
+                            <button class="buttonload">
+                                <a href ="file:///C:/Users/ASCStudent/Documents/demod/au.html" class="nav-link">About Us <span class="sr-only">(current)</span> </a>
+                              </button>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Options
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <button class="buttonload">
+                                  <a href ="#" class="dropdown-item">Music (off/on) <span class="sr-only">(current)</span> </a>
+                                </button>
+                            <a class="dropdown-item" href="#">Help</a>
+                            <div class="dropdown-divider">Find Performers</div>
+                            <a class="dropdown-item" href="#">Contact</a>
+                          </div>
+                        </li>
+                        
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Help</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
+                              </li>
+                        
+                      </ul>
+                      <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Find" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color:blue; border-color:red;">FIND</button>
+                      </form>
+                    </div>
+                  </nav>
+                  <div id="map"></div>
+ <!-- Replace the value of the key parameter with your own API key. -->
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvgBW3MBpTdR62hl6FLaH6pYeExiy1Gu4&callback=initMap"
+   async defer></script>
+                       
+    </body>
+</html>
