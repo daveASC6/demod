@@ -3,7 +3,7 @@ let mainTitle = document.getElementById("main_title");
 
 
 function changeMain(){
-    mainTitle.innerText = "Welcome to BuskFind, " + title_input.value
+    mainTitle.innerText = "Welcome to StreetStar, " + title_input.value
     // alert(title_input.value);
 }
 titleInput.addEventListener("keyup", changeMain);
