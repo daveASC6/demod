@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <embed name="Summer" src="C:\Users\ASCStudent\Documents\demod\Summer.mp3" loop="true" hidden="true" autostart="true">
+        <!-- <embed name="Summer" src="C:\Users\ASCStudent\Documents\demod\Summer.mp3" loop="true" hidden="true" autostart="true"> -->
             <link rel="stylesheet" href="style.css">
-            <script src="main.js"></script>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             <link href="https://fonts.googleapis.com/css?family=Tangerine|Unica+One&display=swap" rel="stylesheet">
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <title>BuskFind</title>
+        <title style="font-family: Unica One">StreetStar</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+
+ 
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin="" defer></script>
+    <script src="main.js" defer></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -29,7 +40,7 @@
     <body>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <img src="logo.png" width="60" height="40">
-                    <a class="navbar-brand" href="#">BuskFind</a>
+                    <a class="navbar-brand" href="#" style="font-family: Unica One">StreetStar</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
@@ -38,47 +49,81 @@
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <button class="buttonload">
-                                <a href ="file:///C:/Users/ASCStudent/Documents/demod/index.html" class="nav-link">Home <span class="sr-only">(current)</span> </a>
+                                <a href ="file:///C:/Users/ASCStudent/Documents/demod/index.html" class="nav-link" style="font-family: Unica One">Home <span class="sr-only">(current)</span> </a>
                               </button>   
                           
                         </li>
                         <li class="nav-item">
                             <button class="buttonload">
-                                <a href ="file:///C:/Users/ASCStudent/Documents/demod/au.html" class="nav-link">About Us <span class="sr-only">(current)</span> </a>
+                                <a href ="file:///C:/Users/ASCStudent/Documents/demod/au.html" class="nav-link" style="font-family: Unica One">About Us <span class="sr-only">(current)</span> </a>
                               </button>
                         </li>
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: Unica One">
                             Options
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                               <button class="buttonload">
-                                  <a href ="#" class="dropdown-item">Music (off/on) <span class="sr-only">(current)</span> </a>
+                                  <a href ="#" class="dropdown-item" style="font-family: Unica One">Music (off/on) <span class="sr-only">(current)</span> </a>
                                 </button>
-                            <a class="dropdown-item" href="#">Help</a>
-                            <div class="dropdown-divider">Find Performers</div>
-                            <a class="dropdown-item" href="#">Contact</a>
+                            <a class="dropdown-item" href="#" style="font-family: Unica One">Help</a>
+                            <div class="dropdown-divider" style="font-family: Unica One">Find Performers</div>
+                            <a class="dropdown-item" href="#" style="font-family: Unica One">Contact</a>
                           </div>
                         </li>
                         
                         <li class="nav-item">
-                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Help</a>
+                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="font-family: Unica One">Help</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
+                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="font-family: Unica One">Contact Us</a>
                               </li>
                         
                       </ul>
                       <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Find" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color:blue; border-color:red;">FIND</button>
+                        <input class="form-control mr-sm-2" type="search" placeholder="Find StreetStars" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color:blue; border-color:red;font-family: Unica One" >FIND</button>
                       </form>
                     </div>
                   </nav>
-                  <div id="map"></div>
- <!-- Replace the value of the key parameter with your own API key. -->
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvgBW3MBpTdR62hl6FLaH6pYeExiy1Gu4&callback=initMap"
-   async defer></script>
-                       
+                  <div class="d-flex justify-content-around">
+
+                  <button onclick="displayDate()"  class="btn btn-primary btn-lg" style="font-family: Unica One">Time & Date</button>
+
+<script>
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+</script>
+
+<p id="demo"></p>
+                  <div class="text-right">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="font-family: Unica One" >
+  StreetStars In Range
+</button>
+</div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="font-family: Unica One">StreetStars within 3 miles</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<div id="mapid"></div>
+
+  
+
     </body>
 </html>
