@@ -24,4 +24,5 @@ mymap.on('locationfound', onLocationFound);
 
 mymap.on('locationerror', onLocationError);
 
-var marker = L.marker([40.8448, -73.8648]).addTo(mymap);
+var marker = L.marker([40.8448, -73.8648]).addTo(mymap)
+.bindPopup("ethan").openPopup();
