@@ -22,8 +22,8 @@
       <title style="font-family: Unica One">StreetStar</title>
  
   <!-- Make sure you put this AFTER Leaflet's CSS -->
-  
-  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
     crossorigin="" defer></script>
     <script src="main.js" defer></script>
@@ -91,8 +91,7 @@
                     </div>
                   </nav>
                   <div class="d-flex justify-content-around">
-
-                  <button onclick="displayDate()"  class="btn btn-primary btn-lg" style="font-family: Unica One">Time & Date</button>
+                    <button onclick="displayDate()"  class="btn btn-primary btn-lg" style="font-family: Unica One">Time & Date</button>
 
 <script>
 function displayDate() {
@@ -101,11 +100,9 @@ function displayDate() {
 </script>
 
 <p id="demo"></p>
-                  <div class="text-right">
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="font-family: Unica One" >
-  StreetStars In Range
-</button>
-</div>
+  <div class="text-right">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="font-family: Unica One">StreetStars In Range</button>
+  </div>
 </div>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -115,9 +112,7 @@ function displayDate() {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel" style="font-family: Unica One">StreetStars within 3 miles</h4>
       </div>
-      <div class="modal-body">
-        
-      </div>
+      <div class="modal-body"></div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
@@ -125,9 +120,6 @@ function displayDate() {
     </div>
   </div>
 </div> 
-<div id="mapid"></div>
-
-  
-
-    </body>
+    <div id="mapid"></div>
+  </body>
 </html>
