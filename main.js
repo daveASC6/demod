@@ -7,12 +7,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
     accessToken: 'pk.eyJ1IjoiZGF2ZWJvbHQxNSIsImEiOiJjano0bTZxZ3EwMjd5M2dxY285YnA5YnM2In0.b67AYjcuzhlLxeUVITvHvg'
 }).addTo(mymap);
 
-mymap.locate({setView: true, maxZoom: 16});
+mymap.locate({setView: true, maxZoom: 14});
 function onLocationFound(e) {
-    var radius = e.accuracy;
+    var radius = e.accuracy + 1609.34;
 
     L.marker(e.latlng).addTo(mymap)
-        .bindPopup("You are within " + radius + " meters from this point").openPopup();
+        .bindPopup("You are here!").openPopup();
 
     L.circle(e.latlng, radius).addTo(mymap);
 }
@@ -23,3 +23,5 @@ mymap.on('locationfound', onLocationFound);
  }
 
 mymap.on('locationerror', onLocationError);
+
+var marker = L.marker([40.8448, -73.8648]).addTo(mymap);
