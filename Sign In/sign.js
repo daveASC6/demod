@@ -1,5 +1,4 @@
 // get HTML Elements
-const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const loginBtn = document.getElementById("loginBtn");
@@ -8,30 +7,23 @@ const createBtn = document.getElementById("createBtn");
 
 //add event listeners
 loginBtn.addEventListener("click", login);
-createBtn.addEventListener("click", function(event){
-  if (username.value == ""){
-    alert("Please enter a Username");
-  } else {
-    //A BUTTON EVENT NOT A LOGIN EVENT
-    createAccount(event);
-  }
-});
+createBtn.addEventListener("click", createAccount);
 
 //Authentication
 const auth = firebase.auth();
 
-
+//create account
 function createAccount(event){
   event.preventDefault();//stops the button click from refreshing the page
   firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
     .then(function(){
       user = auth.currentUser;
       const profile = {
-        displayName: username.value
+        displayName: email.value
       }
       user.updateProfile(profile);
       console.log(user);
-      window.location.href = "messages.html";
+      window.location.href = "C:/Users/ASCStudent/Documents/demod/list/list.html";
     })
   .catch(function(error) {
   // Handle Errors here.
@@ -42,12 +34,13 @@ function createAccount(event){
 });
 }
 
+//log in
 function login(event){
   event.preventDefault();
   firebase.auth().signInWithEmailAndPassword(email.value, password.value)
     .then(function(){
       console.log("LOGIN SUCCESS");
-      window.location.href = "messages.html";
+      window.location.href = "C:/Users/ASCStudent/Documents/demod/list/list.html";
     })
 
     .catch(function(error) {
