@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
         <embed name="Summer" src="C:\Users\ASCStudent\Documents\demod\Summer.mp3" loop="true" hidden="true" autostart="true">
@@ -14,10 +14,10 @@
     <meta charset="utf-8">
    
     </head>
-    <body>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <body style="background-color: blue">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" >
               <img src="logo.png" width="60" height="40">
-                    <a class="navbar-brand" href="#">BuskFind</a>
+                    <a class="navbar-brand" href="#" style="font-family: Unica One">StreetStar</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
@@ -26,49 +26,86 @@
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <button class="buttonload">
-                                <a href ="file:///C:/Users/ASCStudent/Documents/demod/index.html" class="nav-link">Home <span class="sr-only">(current)</span> </a>
+                                <a href ="file:///C:/Users/ASCStudent/Documents/demod/index.html" class="nav-link" style="font-family: Unica One">Home <span class="sr-only">(current)</span> </a>
                               </button>   
                           
                         </li>
                         <li class="nav-item">
                             <button class="buttonload">
-                                <a href ="file:///C:/Users/ASCStudent/Documents/demod/au.html" class="nav-link">About Us <span class="sr-only">(current)</span> </a>
+                                <a href ="file:///C:/Users/ASCStudent/Documents/demod/au.html" class="nav-link" style="font-family: Unica One">About Us <span class="sr-only">(current)</span> </a>
                               </button>
                         </li>
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: Unica One">
                             Options
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                               <button class="buttonload">
-                                  <a href ="#" class="dropdown-item">Music (off/on) <span class="sr-only">(current)</span> </a>
+                                  <a href ="#" class="dropdown-item" style="font-family: Unica One">Music (off/on) <span class="sr-only">(current)</span> </a>
                                 </button>
-                            <a class="dropdown-item" href="#">Help</a>
-                            <div class="dropdown-divider">Find Performers</div>
-                            <a class="dropdown-item" href="#">Contact</a>
+                            <a class="dropdown-item" href="#" style="font-family: Unica One">Help</a>
+                            <div class="dropdown-divider" style="font-family: Unica One">Find Performers</div>
+                            <a class="dropdown-item" href="#" style="font-family: Unica One">Contact</a>
                           </div>
                         </li>
                         
                         <li class="nav-item">
-                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Help</a>
-                        </li>
+                            <a class="nav-link" href="Sign In/signin.html" tabindex="-1" aria-disabled="true" style="font-family: Unica One">Sign Up/Login</a>
+                          </li>
                         <li class="nav-item">
-                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
+                                <a class="nav-link" href="create.html" tabindex="-1" aria-disabled="true" style="font-family: Unica One">Set StreetShow</a>
                               </li>
-                        
+                              <li class="nav-item">
+                                    <button onclick="displayDate()"   class="buttonload">
+                                    <a class="nav-link" style="font-family: Unica One">Time & Date</a>
+
+                                    <script>
+                                    function displayDate() {
+                                      document.getElementById("demo").innerHTML = Date();
+                                    }
+                                    </script>
+                                    </button> 
+                              </li>
+                              <li class="nav-item">
+                    <button type="button" class="buttonload" data-toggle="modal" data-target="#myModal" style="font-family: Unica One" >
+                        <a  class="nav-link" style="font-family: Unica One"> StreetStars In Range <span class="sr-only">(current)</span> </a>
+ 
+</button>
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="font-family: Unica One">StreetStars within 3 miles</h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+                              </li>
+                          
                       </ul>
                       <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Find" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color:blue; border-color:red;">FIND</button>
+                        <input class="form-control mr-sm-2" type="search" placeholder="Find StreetStars" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color:blue; border-color:red;font-family: Unica One" >FIND</button>
                       </form>
                     </div>
                   </nav>
                   <div class="d-flex justify-content-around">
                   <img src="ed.png">
-                  <h1 style="font-family: Unica One;">About Us</h1>
-                  <h1>As students of the amazing program All Star Code, </h1>
+                  <h1 style="font-family: Unica One; color: whitesmoke; text-emphasis: emphasis;">About Us - 
+                      As students of the amazing program All Star Code, we used our skils and tools, learned at Al Star Code, to create a website that used each and everyone of the skills we had learned at Wells Fargo. The road was bumpy and the time was very limited however we got the project done and punlished in time. </h1>
                 </div>
-
-                       
-    </body>
-</html>
+                  <h1 style="font-size: 20px; color: whitesmoke">About The App - Streem Performers are a huge part of the New Yorkian culture. They could be either found all over New York, but the problem is we never know when or where they will be, we just happen to be there to see their shows. This web app solves that problem by alerting users where the street performers are in a mile radius from them using geolocation. When this happens the user would be able to get to the performance in time to see it.
+                    </h1>
+                    </body>
+                    </html>
