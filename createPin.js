@@ -3,7 +3,8 @@ let numPins = 0;
 newPinId = "pin-"+numPins+1;
 
 let prfrmName = document.getElementById("name");
-let prfrmPlace = document.getElementById("location");
+let prfrmPlaceLO = document.getElementById("longitude");
+let prfrmPlaceLA = document.getElementById("latitude");
 let prfrmTime = document.getElementById("time");
 let crtPinButton = document.getElementById("crtPinpoint");
 
@@ -14,7 +15,8 @@ crtPinButton.addEventListener("click", function(e){
 
 function createPinpoint(){
 db.collection("events").doc(newPinId).set({
-    LOCATION: prfrmPlace.value,
+    LONGITUDE: prfrmPlaceLO.value,
+    LATITUDE: prfrmPlaceLA.value,
     TITLE: prfrmName.value,
     TIME: prfrmTime.value
 })
