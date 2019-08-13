@@ -23,3 +23,11 @@
   }
 
   #mapid { height: 100%; }
+
+  body{
+    background: url("https://media1.tenor.com/images/aea04054445150cb1faa2a4fd373fce2/tenor.gif") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+   }

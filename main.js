@@ -1,3 +1,5 @@
+
+
 var map;
 var mymap = L.map('mapid').setView([40.7831, -73.9712], 15);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGF2ZWJvbHQxNSIsImEiOiJjano0bTZxZ3EwMjd5M2dxY285YnA5YnM2In0.b67AYjcuzhlLxeUVITvHvg', {
@@ -7,7 +9,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
     accessToken: 'pk.eyJ1IjoiZGF2ZWJvbHQxNSIsImEiOiJjano0bTZxZ3EwMjd5M2dxY285YnA5YnM2In0.b67AYjcuzhlLxeUVITvHvg'
 }).addTo(mymap);
 
-mymap.locate({setView: true, maxZoom: 14});
+mymap.locate({setView: true, maxZoom: 12});
 function onLocationFound(e) {
     var radius = e.accuracy + 1609.34;
 
@@ -24,5 +26,17 @@ mymap.on('locationfound', onLocationFound);
 
 mymap.on('locationerror', onLocationError);
 
-var marker = L.marker([40.8448, -73.8648]).addTo(mymap)
+var marker1 = L.marker([40.7848, -73.9448]).addTo(mymap)
 .bindPopup("ethan").openPopup();
+
+var marker2 = L.marker([40.7248, -73.9648]).addTo(mymap)
+.bindPopup("ethan").openPopup();
+mymap.on('zoomend', function() {
+    var currentZoom = mymap.getZoom();
+    if(currentZoom >= 0) {
+      
+    }
+    else {
+      marker2.hide();
+    }
+});
