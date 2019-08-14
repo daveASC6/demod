@@ -44,7 +44,7 @@ adpr.then(function(resp){
    console.log(e.latlng);
    addMarker(address, e.latlng);
    window.localStorage.setItem("address",address);
-         window.localStorage.setItem("latlng", e.latlng);
+  window.localStorage.setItem("latlng",JSON.stringify(e.latlng));
 
 //    let marker = L.marker(e.latlng).addTo(mymap);
 //    let popup = L.popup();
@@ -61,11 +61,10 @@ alert("You clicked the map at LAT: " + lati[1] + " and LONG: " + lng[0]);
  	});
 
 
-function addMarker(address, latlng){
-    debugger;
+function addMarker(address, latlng, name = ""){
     let marker = L.marker(latlng).addTo(mymap);
     let popup = L.popup();
-    popup.setContent(address+ '<button  type="button" class="buttonload" data-toggle="modal" data-target="#myModal" style="font-family: Unica One" style="color: red"> SET STREETSHOW </button>');
+    popup.setContent(name + " at " + address+ '<button  type="button" class="buttonload" data-toggle="modal" data-target="#myModal" style="font-family: Unica One" style="color: red"> SET STREETSHOW </button>' + "<button  type='button' class='buttonload' style='font-family: Unica One' style='color: red'> CANCEL </button>");
      marker.bindPopup(popup).openPopup();
          marker.bindPopup(popup).openPopup();
          

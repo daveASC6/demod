@@ -11,9 +11,9 @@ let crtPinButton = document.getElementById("crtPinpoint");
 $("#showtime").submit(function(e){
   e.preventDefault();
   let address =     window.localStorage.getItem("address");
-  let latlng = window.localStorage.getItem("latlng");
+  let latlng =JSON.parse(window.localStorage.getItem("latlng"));
   let name = $("#name").val();
-  addMarker(address,latlng)
+  addMarker(address,latlng,name)
   
 
 
