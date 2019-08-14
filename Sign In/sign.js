@@ -23,7 +23,7 @@ function createAccount(event){
       }
       user.updateProfile(profile);
       console.log(user);
-      window.location.href = "C:/Users/ASCStudent/Documents/demod/create.html";
+      window.location.href = "C:/Users/ASCStudent/Documents/ss/demod/index.html";
     })
   .catch(function(error) {
   // Handle Errors here.
@@ -40,7 +40,7 @@ function login(event){
   firebase.auth().signInWithEmailAndPassword(email.value, password.value)
     .then(function(){
       console.log("LOGIN SUCCESS");
-      window.location.href = "C:/Users/ASCStudent/Documents/demod/create.html";
+      window.location.href = "C:/Users/ASCStudent/Documents/ss/demod/index.html";
     })
 
     .catch(function(error) {

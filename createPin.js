@@ -10,7 +10,8 @@ let crtPinButton = document.getElementById("crtPinpoint");
 
 crtPinButton.addEventListener("click", function(e){
     e.preventDefault();
-    createPinpoint();
+    L.marker([prfrmPlaceLA.value, prfrmPlaceLO.value]).addTo(mymap)
+    .bindPopup(prfrmName.value + " at "+ prfrmTime.value).openPopup();
 });
 
 function createPinpoint(){

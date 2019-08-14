@@ -1,7 +1,7 @@
-const db = firebase.firestore();
+const dtb = firebase.firestore();
 let numEvents = 0;
 
-db.collection("events").get().then((querySnapshot) => {
+dtb.collection("events").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         numEvents += 1;
         console.log(doc.data());

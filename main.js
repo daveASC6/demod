@@ -26,9 +26,6 @@ mymap.on('locationfound', onLocationFound);
 
 mymap.on('locationerror', onLocationError);
 
-var marker2 = L.marker([40.8846442, -73.8636568]).addTo(mymap)
-.bindPopup("ethan").openPopup();
-
 
 mymap.on('dblclick', 
 	function(e){
