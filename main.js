@@ -64,7 +64,7 @@ alert("You clicked the map at LAT: " + lati[1] + " and LONG: " + lng[0]);
 function addMarker(address, latlng, name = ""){
     let marker = L.marker(latlng).addTo(mymap);
     let popup = L.popup();
-    popup.setContent(name + " at " + address+ '<button  type="button" class="buttonload" data-toggle="modal" data-target="#myModal" style="font-family: Unica One" style="color: red"> SET STREETSHOW </button>' + "<button  type='button' class='buttonload' style='font-family: Unica One' style='color: red'> CANCEL </button>");
+    popup.setContent(name + " at " + address+ '<button  type="button" class="buttonload" data-toggle="modal" data-target="#myModal" style="font-family: Unica One" style="color: red"> SET STREETSHOW </button>');
      marker.bindPopup(popup).openPopup();
          marker.bindPopup(popup).openPopup();
          
