@@ -1,4 +1,4 @@
-
+let radius;
 
 var map;
 var mymap = L.map('mapid').setView([40.7831, -73.9712], 15);
@@ -11,12 +11,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 
 mymap.locate({setView: true, maxZoom: 12});
 function onLocationFound(e) {
-    var radius = e.accuracy + 1609.34;
+    radius = e.accuracy + 1609.34;
 
     L.marker(e.latlng).addTo(mymap)
         .bindPopup("You are here!").openPopup();
 
-    L.circle(e.latlng, radius).addTo(mymap);
+
 }
 
 mymap.on('locationfound', onLocationFound);
@@ -26,17 +26,19 @@ mymap.on('locationfound', onLocationFound);
 
 mymap.on('locationerror', onLocationError);
 
-var marker1 = L.marker([40.7848, -73.9448]).addTo(mymap)
+var marker2 = L.marker([40.8846442, -73.8636568]).addTo(mymap)
 .bindPopup("ethan").openPopup();
 
-var marker2 = L.marker([40.7248, -73.9648]).addTo(mymap)
+
+mymap.on('dblclick', 
+	function(e){
+var coord = e.latlng.toString().split(',');
+var lati = coord[0].split('(');
+var lng = coord[1].split(')');
+alert("You clicked the map at LAT: " + lati[1] + " and LONG: " + lng[0]);
+    L.marker(e.latlng).addTo(mymap);
+    var marker = L.marker().addTo(mymap)
 .bindPopup("ethan").openPopup();
-mymap.on('zoomend', function() {
-    var currentZoom = mymap.getZoom();
-    if(currentZoom >= 0) {
-      
-    }
-    else {
-      marker2.hide();
-    }
-});
+
+ 	});
+
