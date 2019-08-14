@@ -1,5 +1,5 @@
 let radius;
-
+let adpr = "";
 var map;
 var mymap = L.map('mapid').setView([40.7831, -73.9712], 15);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGF2ZWJvbHQxNSIsImEiOiJjano0bTZxZ3EwMjd5M2dxY285YnA5YnM2In0.b67AYjcuzhlLxeUVITvHvg', {
@@ -35,21 +35,42 @@ var lng = coord[1].split(')');
 
 let geo = `https://api.mapbox.com/geocoding/v5/mapbox.places/${lng[0]},${lati[1]}.json?access_token=pk.eyJ1IjoiZGF2ZWJvbHQxNSIsImEiOiJjano0bTZxZ3EwMjd5M2dxY285YnA5YnM2In0.b67AYjcuzhlLxeUVITvHvg`
 
-let adpr = fetch(geo);
+adpr = fetch(geo);
 
 adpr.then(function(resp){
     return resp.json()
 }).then(function(pin){
    let address = pin.features[0].place_name;
-   let marker = L.marker(e.latlng).addTo(mymap);
-   let popup = L.popup();
-   popup.setContent(address+ '<button  type="button" class="buttonload" data-toggle="modal" data-target="#myModal" style="font-family: Unica One" style="color: red"> SET STREETSHOW </button>');
-    marker.bindPopup(popup).openPopup();
-    L.D
+   console.log(e.latlng);
+   addMarker(address, e.latlng);
+   window.localStorage.setItem("address",address);
+         window.localStorage.setItem("latlng", e.latlng);
+
+//    let marker = L.marker(e.latlng).addTo(mymap);
+//    let popup = L.popup();
+//    popup.setContent(address+ '<button  type="button" class="buttonload" data-toggle="modal" data-target="#myModal" style="font-family: Unica One" style="color: red"> SET STREETSHOW </button>');
+//     marker.bindPopup(popup).openPopup();
+//     // resolve(address);
+    
+    
 })
 
 alert("You clicked the map at LAT: " + lati[1] + " and LONG: " + lng[0]);
    
 
  	});
+
+
+function addMarker(address, latlng){
+    debugger;
+    let marker = L.marker(latlng).addTo(mymap);
+    let popup = L.popup();
+    popup.setContent(address+ '<button  type="button" class="buttonload" data-toggle="modal" data-target="#myModal" style="font-family: Unica One" style="color: red"> SET STREETSHOW </button>');
+     marker.bindPopup(popup).openPopup();
+         marker.bindPopup(popup).openPopup();
+         
+
+
+
+}
 

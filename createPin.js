@@ -4,13 +4,27 @@ newPinId = "pin-"+numPins+1;
 
 let prfrmName = document.getElementById("name");
 let prfrmTime = document.getElementById("time");
+let prfrmPlaceLA = document.getElementById("latitude");
+let prfrmPlaceLO = document.getElementById("longitude");
 let crtPinButton = document.getElementById("crtPinpoint");
 
-crtPinButton.addEventListener("click", function(e){
-    e.preventDefault();
-    L.marker([prfrmPlaceLA.value, prfrmPlaceLO.value]).addTo(mymap)
-    .bindPopup(prfrmName.value + " at "+ prfrmTime.value).openPopup();
-});
+$("#showtime").submit(function(e){
+  e.preventDefault();
+  let address =     window.localStorage.getItem("address");
+  let latlng = window.localStorage.getItem("latlng");
+  let name = $("#name").val();
+  addMarker(address,latlng)
+  
+
+
+    //    L.marker([prfrmPlaceLA.value, prfrmPlaceLO.value]).addTo(mymap)
+    // .bindPopup(prfrmName.value + " at "+ address+ prfrmTime.value).openPopup();
+})
+// crtPinButton.addEventListener("click", function(e){
+//     e.preventDefault();
+//     alert(123);
+
+// });
 
 function createPinpoint(){
 db.collection("events").doc(newPinId).set({
