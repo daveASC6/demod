@@ -3,8 +3,6 @@ let numPins = 0;
 newPinId = "pin-"+numPins+1;
 
 let prfrmName = document.getElementById("name");
-let prfrmPlaceLO = document.getElementById("longitude");
-let prfrmPlaceLA = document.getElementById("latitude");
 let prfrmTime = document.getElementById("time");
 let crtPinButton = document.getElementById("crtPinpoint");
 
