@@ -1,10 +1,29 @@
 const dtb = firebase.firestore();
 let numEvents = 0;
 
+
+
+
+
 dtb.collection("events").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         numEvents += 1;
-        console.log(doc.data());
+        let obj = doc.data();
+        console.log(obj["LOCATION"]);
+        if(obj["LOCATION"] != undefined ){
+            let latlng  = [
+              doc.data().LOCATION.latitude,
+              doc.data().LOCATION.longitude
+            ]
+            let marker = L.marker(latlng).addTo(mymap);
+            let popup = L.popup();
+    popup.setContent(name);
+     marker.bindPopup(popup).openPopup();
+
+
+
+        }
+        // console.log(doc.data());
     });
 });
 

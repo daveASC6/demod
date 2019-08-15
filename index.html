@@ -100,7 +100,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="Sign In/signin.html" tabindex="-1" aria-disabled="true" style="font-family: Unica One">Sign Up/Login</a>
+                            <a class="nav-link" href="Sign In/signin.html" tabindex="-1" aria-disabled="true" style="font-family: Unica One" id="loginStatus">Sign Up/Login</a>
                           </li>
                               <li class="nav-item">
                                     <button onclick="displayDate()"   class="buttonload">
@@ -114,37 +114,9 @@
                                     </button> 
                                     <p id="demo"></p>
                               </li>
-                               <li class="nav-item">
-                    <button type="button" class="buttonload" data-toggle="modal" data-target="#myModal" style="font-family: Unica One" >
-                        <a  class="nav-link" style="font-family: Unica One"> Set StreetShow <span class="sr-only">(current)</span> </a>
- 
-</button>
-
-
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel" style="font-family: Unica One">StreetShow (please fill the form)</h4>
-      </div>
-      <div class="modal-body">
-          <form id="showtime">
-              <input id="name" type="text" placeholder="Name">
-              <input id="time" type="time" placeholder="Showtimes">
-      
-              <button id="crtPinpoint" class="btn btn-action">SUBMIT!</button>
-          </form>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-                              </li>
+                               
+                    
+                            
                           
                       </ul>
                       <form class="form-inline my-2 my-lg-0">
@@ -159,7 +131,32 @@
                       </form>
                     </div>
                   </nav>
-                
+                 
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel" style="font-family: Unica One">StreetShow (please fill the form)</h4>
+    </div>
+    <div class="modal-body">
+        <form id="showtime">
+            <input id="name" type="text" placeholder="Name">
+            <input id="time" type="time" placeholder="Showtimes">
+    
+            <button id="crtPinpoint" class="btn btn-action">SUBMIT!</button>
+        </form>
+      
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
                   
 
                  
