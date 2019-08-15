@@ -1,164 +1,131 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <!-- <embed name="Summer" src="C:\Users\ASCStudent\Documents\demod\Summer.mp3" loop="true" hidden="true" autostart="true"> -->
-      
+    <head>      
+      <!--Styling code-->
+      <link rel="shortcut icon" href="C:\Users\ASCStudent\Documents\ss\demod\favicon.ico" type="image/x-icon"/>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine|Unica+One&display=swap">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
       <!--More styling-->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
       <!--Metadata-->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1.0">
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-
-      <!--Styling code-->
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine|Unica+One&display=swap">
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+ 
+      <!-- Make sure you put this AFTER Leaflet's CSS -->
+      <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin="" defer></script>
       
+      <!--Firebase-->
+      <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+      <!--JavaScript-->
+      <script src="Sign In/config.js"></script>
+      <script src="main.js" defer></script> 
+      <script src="createPin.js" defer></script>   
+      <script src="createEvent.js" defer></script>
+
       <title style="font-family: Unica One">StreetStar</title>
- 
-  <!-- Make sure you put this AFTER Leaflet's CSS -->
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-  
-  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-    crossorigin="" defer></script>
-
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
-    <script src="Sign In/config.js"></script>
-    <script src="main.js" defer></script> 
-    <script src="createPin.js" defer></script>   
-    <script src="createEvent.js" defer></script>
-
-    <link rel="shortcut icon" href="C:\Users\ASCStudent\Documents\ss\demod\favicon.ico" type="image/x-icon"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
- 
-   
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
     </head>
+
     <body>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-              <img src="logo.png" width="60" height="40">
-                    <a class="navbar-brand" href="#" style="font-family: Unica One">StreetStar</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
- 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <button class="buttonload">
-                                <a href ="file:///C:/Users/ASCStudent/Documents/ss/demod/index.html" class="nav-link" style="font-family: Unica One">Home <span class="sr-only">(current)</span> </a>
-                              </button>   
-                              <i class="fa fa-home"></i>
-                             
-                        </li>
-                        <li class="nav-item">
-                            <button class="buttonload">
-                                <a href ="file:///C:/Users/ASCStudent/Documents/ss/demod/au.html" class="nav-link" style="font-family: Unica One">About Us <span class="sr-only">(current)</span> </a>
-                              </button>
-                        </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: Unica One">
-                            Options
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <button class="buttonload">
-                                  <a href ="#" class="dropdown-item" style="font-family: Unica One">Music (off/on) <span class="sr-only">(current)</span> </a>
-                                </button>
-                            <a class="dropdown-item" href="#" style="font-family: Unica One">Help</a>
-                            <div class="dropdown-divider" style="font-family: Unica One">Find Performers</div>
-                            <a class="dropdown-item" href="#" style="font-family: Unica One">Contact</a>
-                          </div>
-                        </li>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+          <img src="logo.png" width="60" height="40">
+          <a class="navbar-brand" href="#" style="font-family: Unica One">StreetStar</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <button class="buttonload">
+                  <a href ="file:///C:/Users/ASCStudent/Documents/ss/demod/index.html" class="nav-link" style="font-family: Unica One">Home <span class="sr-only">(current)</span> </a>
+                </button>   
+                <i class="fa fa-home"></i>
+              </li>
+
+              <li class="nav-item">
+                <button class="buttonload">
+                  <a href ="file:///C:/Users/ASCStudent/Documents/ss/demod/au.html" class="nav-link" style="font-family: Unica One">About Us <span class="sr-only">(current)</span> </a>
+                </button>
+              </li>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: Unica One">Options</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <button class="buttonload">
+                    <a href ="#" class="dropdown-item" style="font-family: Unica One">Music (off/on) <span class="sr-only">(current)</span> </a>
+                  </button>
+                  <a class="dropdown-item" href="#" style="font-family: Unica One">Help</a>
+                  <div class="dropdown-divider" style="font-family: Unica One">Find Performers</div>
+                  <a class="dropdown-item" href="#" style="font-family: Unica One">Contact</a>
+                </div>
+              </li>
                         
-                        <li class="nav-item">
-                            <a class="nav-link" href="Sign In/signin.html" tabindex="-1" aria-disabled="true" style="font-family: Unica One">Sign Up/Login</a>
-                          </li>
-                              <li class="nav-item">
-                                    <button onclick="displayDate()"   class="buttonload">
-                                    <a class="nav-link" style="font-family: Unica One">Time & Date</a>
+              <li class="nav-item">
+                <a class="nav-link" href="Sign In/signin.html" tabindex="-1" aria-disabled="true" style="font-family: Unica One">Sign Up/Login</a>
+              </li>
 
-                                    <script>
-                                    function displayDate() {
-                                      document.getElementById("demo").innerHTML = Date();
-                                    }
-                                    </script>
-                                    </button> 
-                                    <p id="demo"></p>
-                              </li>
-                               <li class="nav-item">
-                    <button type="button" class="buttonload" data-toggle="modal" data-target="#myModal" style="font-family: Unica One" >
-                        <a  class="nav-link" style="font-family: Unica One"> Set StreetShow <span class="sr-only">(current)</span> </a>
- 
-</button>
+              <li class="nav-item">
+                <button onclick="displayDate()"   class="buttonload">
+                  <a class="nav-link" style="font-family: Unica One">Time & Date</a>
+                  <script>
+                    function displayDate() {
+                    document.getElementById("demo").innerHTML = Date();
+                    }
+                  </script>
+                </button> 
+                <p id="demo"></p>
+              </li>
+              
+              <li class="nav-item">
+                <button type="button" class="buttonload" data-toggle="modal" data-target="#myModal" style="font-family: Unica One">
+                  <a class="nav-link" style="font-family: Unica One"> Set StreetShow<span class="sr-only">(current)</span></a>
+                </button>
 
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel" style="font-family: Unica One">StreetShow (please fill the form)</h4>
+                      </div>
 
+                      <div class="modal-body">
+                        <form id="showtime">
+                          <input id="name" type="text" placeholder="Name">
+                          <input id="time" type="time" placeholder="Showtimes">
+                          <button id="crtPinpoint" class="btn btn-action">SUBMIT!</button>
+                        </form>
+                      </div>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel" style="font-family: Unica One">StreetShow (please fill the form)</h4>
-      </div>
-      <div class="modal-body">
-          <form id="showtime">
-              <input id="name" type="text" placeholder="Name">
-              <input id="time" type="time" placeholder="Showtimes">
-      
-              <button id="crtPinpoint" class="btn btn-action">SUBMIT!</button>
-          </form>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-                              </li>
-                          
-                      </ul>
-                      <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Find StreetStars" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color:blue; border-color:red;font-family: Unica One" >FIND</button>
-                      </form>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
                     </div>
-                  </nav>
-                
-                  
-
-                 
-
- 
-<div id="mapid"></div>
-
-  
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Find StreetStars" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color:blue; border-color:red;font-family: Unica One" >FIND</button>
+            </form>
+          </div>
+        </nav>
+        <div id="mapid"></div>  
 <!-- Footer -->
 <footer class="page-footer font-small cyan darken-3">
 
