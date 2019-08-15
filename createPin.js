@@ -43,3 +43,10 @@ firebase.auth().onAuthStateChanged(function(user) {
       // ...
     }
   });
+  var ref = new Firebase('https://yours.firebaseio.com/path/to/items/');
+var now = Date.now();
+var cutoff = now - 24 * 60 * 60 * 1000;
+var old = ref.orderByChild('timestamp').endAt(cutoff).limitToLast(1);
+var listener = old.on('child_added', function(snapshot) {
+    snapshot.ref.remove();
+});
