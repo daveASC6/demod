@@ -1,6 +1,4 @@
 const db = firebase.firestore();
-let numPins = 0;
-newPinId = "pin-"+numPins+1;
 
 let prfrmName = document.getElementById("name");
 let prfrmTime = document.getElementById("time");
@@ -11,25 +9,19 @@ let crtPinButton = document.getElementById("crtPinpoint");
 $("#showtime").submit(function(e){
   e.preventDefault();
   let address =     window.localStorage.getItem("address");
-  let latlng =JSON.parse(window.localStorage.getItem("latlng"));
+  let point =JSON.parse(window.localStorage.getItem("latlng"));
   let name = $("#name").val();
-  addMarker(address,latlng,name)
-  
+  addMarker(address,point,name)
+  createPinpoint(point)
 
-
-    //    L.marker([prfrmPlaceLA.value, prfrmPlaceLO.value]).addTo(mymap)
-    // .bindPopup(prfrmName.value + " at "+ address+ prfrmTime.value).openPopup();
 })
-// crtPinButton.addEventListener("click", function(e){
-//     e.preventDefault();
-//     alert(123);
 
-// });
 
-function createPinpoint(){
-db.collection("events").doc(newPinId).set({
-    LONGITUDE: prfrmPlaceLO.value,
-    LATITUDE: prfrmPlaceLA.value,
+function createPinpoint(point){
+  let docId = prfrmName.value +"-"+ prfrmTime.value;
+
+db.collection("events").doc(docId).set({
+   LOCATION: new firebase.firestore.GeoPoint(point.lat,point.lng),
     TITLE: prfrmName.value,
     TIME: prfrmTime.value
 })
