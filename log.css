@@ -87,3 +87,7 @@ button:hover{
     background: #c80a00;
     box-shadow : -4px 5px 4px rgba(0,0,0,.8);    
 }
+
+#sign{
+    height: 30px;
+}
