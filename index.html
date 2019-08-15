@@ -71,16 +71,19 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
+                            <!-- <i class="fa fa-home"></i> -->
                             <button class="buttonload">
                                 <a href ="file:///C:/Users/ASCStudent/Documents/ss/demod/index.html" class="nav-link" style="font-family: Unica One">Home <span class="sr-only">(current)</span> </a>
                               </button>   
-                              <i class="fa fa-home"></i>
+                             
                              
                         </li>
                         <li class="nav-item">
+                            <!-- <i class="fa fa-male"></i> -->
                             <button class="buttonload">
                                 <a href ="file:///C:/Users/ASCStudent/Documents/ss/demod/au.html" class="nav-link" style="font-family: Unica One">About Us <span class="sr-only">(current)</span> </a>
                               </button>
+                              
                         </li>
                         <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: Unica One">
@@ -147,6 +150,12 @@
                       <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Find StreetStars" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color:blue; border-color:red;font-family: Unica One" >FIND</button>
+<!-- to call the text in a search bar,
+- set variable = document.getElementbyID/ClassName/whatever the searchbars called
+- the text inside is variable.value -->
+<script>
+  let search = document.getElementsByClassName("btn btn-outline-success my-2 my-sm-0")
+</script>
                       </form>
                     </div>
                   </nav>
