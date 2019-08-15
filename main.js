@@ -64,9 +64,10 @@ alert("You clicked the map at LAT: " + lati[1] + " and LONG: " + lng[0]);
 function addMarker(address, latlng, name = ""){
     let marker = L.marker(latlng).addTo(mymap);
     let popup = L.popup();
-    popup.setContent(name + " at " + address+ '<button  type="button" class="buttonload" data-toggle="modal" data-target="#myModal" style="font-family: Unica One" style="color: red"> SET STREETSHOW </button>');
+    popup.setContent(name + " at " + address+ '<button  type="button" class="buttonload" data-toggle="modal" data-target="#myModal" style="font-family: Unica One; color: blue"> SET STREETSHOW </button>' + '<button  type="button" class="buttonload" id="cancel" style="font-family: Unica One; color: red"> Cancel </button>');
      marker.bindPopup(popup).openPopup();
          marker.bindPopup(popup).openPopup();
+         document.getElementById("cancel")= map.removeLayer(Marker);
          
 
 

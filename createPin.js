@@ -37,6 +37,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
      document.getElementById("loginStatus").innerText = `Signed in as ${user.email}`
+     //make a way to show that the user is logged in
       // ...
     } else {
       // User is signed out.
